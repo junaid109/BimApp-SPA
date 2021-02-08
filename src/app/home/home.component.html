@@ -2,6 +2,7 @@
   <div *ngIf="!registerMode"  style="text-align: center">
     <h1>Home Page</h1>
     <p class="lead">View all your 3D models here, sign in!</p>
+    <p>api url: {{authService.baseUrl}}</p>
     <div class="text-center">
       <button class="btn btn-primary btn-lg mr-2" (click)="registerToggle()" >Register</button>
       <button class="btn btn-info btn-lg">Learn more</button>
