@@ -22,8 +22,23 @@ export class ErrorInterceptor implements HttpInterceptor {
               if(error.error.errors)
               {
                 const modalStateErrors = [];
-                for
+                for (const key in error.error.errors)
+                if(error.error.errors[key])
+                {
+                  modalStateErrors.push(error.error.errors[key])
+                }
               }
+            break;
+
+            case 401:
+
+            break;
+
+            case 404:
+
+            break;
+
+            case 500:
 
             break;
 

@@ -19,6 +19,7 @@ import { AppRoutingModule } from './app-routing.modules';
 import { ToastrModule } from 'ngx-toastr';
 import { AuthGuard } from './_guards/auth.guard';
 import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
+import { MemberCardComponent } from './members/member-card/member-card.component';
 
 @NgModule({
    declarations: [
@@ -31,7 +32,8 @@ import { TestErrorsComponent } from './errors/test-errors/test-errors.component'
       ListsComponent,
       MessagesComponent,
       ModelviewerComponent,
-      TestErrorsComponent
+      TestErrorsComponent,
+      MemberCardComponent
    ],
    imports: [
       RouterModule,
