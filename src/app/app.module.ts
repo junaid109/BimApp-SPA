@@ -1,6 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { HttpClientModule } from '@angular/common/http';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
 import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { FormsModule } from '@angular/forms';
@@ -20,6 +20,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { AuthGuard } from './_guards/auth.guard';
 import { TestErrorsComponent } from './errors/test-errors/test-errors.component';
 import { MemberCardComponent } from './members/member-card/member-card.component';
+import { JwtInterceptor } from './_interceptors/jwt.interceptor';
+import { ErrorInterceptor } from './_interceptors/error.interceptor';
 
 @NgModule({
    declarations: [
@@ -48,7 +50,9 @@ import { MemberCardComponent } from './members/member-card/member-card.component
       }),
    ],
    providers: [
-      AuthService
+      AuthService,
+      {provide: HTTP_INTERCEPTORS, useClass: ErrorInterceptor, multi: true},
+      {provide: HTTP_INTERCEPTORS, useClass: JwtInterceptor, multi: true},
 
    ],
    bootstrap: [

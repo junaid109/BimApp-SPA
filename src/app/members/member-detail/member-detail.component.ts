@@ -14,6 +14,11 @@ export class MemberDetailComponent implements OnInit {
 
   constructor(private memberService: MembersService, private route: ActivatedRoute, private shared: SharedModule) { }
 
+
+
+
+
+
   ngOnInit(): void {
     this.loadMember();
   }
@@ -21,7 +26,7 @@ export class MemberDetailComponent implements OnInit {
   loadMember() {
     this.memberService.getMember(this.route.snapshot.paramMap.get('username')).subscribe(member =>
       {
-        member = member;
+        this.member = member;
       })
   }
 
