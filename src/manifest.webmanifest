@@ -1,6 +1,6 @@
 {
-  "name": "BimApp-SPA",
-  "short_name": "BimApp-SPA",
+  "name": "client",
+  "short_name": "client",
   "theme_color": "#1976d2",
   "background_color": "#fafafa",
   "display": "standalone",
